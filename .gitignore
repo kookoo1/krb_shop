@@ -2,4 +2,4 @@
 htdocs/libraries
 .zfproject.xml
 .mbproject
-
+.vagrant
