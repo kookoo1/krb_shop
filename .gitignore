@@ -1,2 +1,5 @@
 .DS_Store
 htdocs/libraries
+.zfproject.xml
+.mbproject
+
