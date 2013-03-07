@@ -1,0 +1,23 @@
+<h1>Producten overzicht</h1>
+        <section id="creations">
+<?php
+foreach ($this->producten as $producten) {
+
+    echo "<article id='product'>";
+    echo "<h1>" . $producten['prodname'] . "</h1>";
+    echo "<figure>";
+       echo "<img src='/images/producten/".$producten['prodimg']."' alt=".$producten['prodimg'].">";
+   
+    echo "</figure>";
+    //echo "<div id='description'>";
+    //echo "<p>" . $producten['proddef'] . "</p>";
+    //echo "</div>";
+
+    echo "<div id='price'>&euro; " . $producten['prodprice'] . "</div>";
+
+    //echo $this->form;
+    echo "<a href='producten/detail'>Detail</a>";
+    echo '</article>';
+};
+ ?>
+        </section >

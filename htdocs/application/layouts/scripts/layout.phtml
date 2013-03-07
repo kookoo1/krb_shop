@@ -1,1 +1,32 @@
-<?php echo $this->layout()->content; ?>
+<html>
+    <head>
+        <title>Test layout</title>
+        <link href="/css/style.css" rel="stylesheet" />
+         <meta charset="UTF-8" />
+        <!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+  </head>
+    <body>
+        <div id="container">
+            <header>
+                <div id="logo">
+                    <img src="/images/logo.png" alt="Tweet" width="200" />
+                </div>
+                <nav>
+                    <?php
+                        echo $this->navigation()->menu(); ?>
+                    <!--
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/index/producten">Producten</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul> -->
+                </nav>
+            </header>
+            <section id="content">
+                <?php echo $this->layout()->content; ?>
+            </section>
+        </div>
+    </body>
+</html>

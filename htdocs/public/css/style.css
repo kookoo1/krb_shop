@@ -1,0 +1,13 @@
+@import url('reset.css');
+*{margin:0px;padding:0px;}
+body{background: #999;color:#ccc;}
+#container{margin:0 auto; width:800px;}
+header #logo{float:left; width:200px}
+header nav{float:left;width:600px;margin-top:100px;}
+header nav a{color:#fff;}
+nav ul li{display: inline;}
+#content{float:left;width:800px;}
+
+#content #creations article{float:left;width:160px; margin:23px;border: 1px}
+#content #creations img{border:1px solid #adb6a9;}
+
