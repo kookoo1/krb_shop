@@ -1,0 +1,24 @@
+<h1>Product</h1>
+<section id="creations">
+    <?php
+    //$this->producten as $producten;
+
+        echo "<article id='product'>";
+        echo "<h1>" . $this->producten['prodname'] . "</h1>";
+        echo "<figure>";
+        echo "<img src='/images/producten/" . $this->producten['prodimg'] .
+                "' alt=" . $this->producten['prodimg'] . ">";
+
+        echo "</figure>";
+        echo "<div id='description'>";
+        echo "<p>" . $this->producten['proddef'] . "</p>";
+        echo "</div>";
+
+        echo "<div id='price'>&euro; " . $this->producten['prodprice'] . "</div>";
+
+        //echo $this->form;
+        echo "<a href='details'>Bestel</a>";
+        echo '</article>';
+
+    ?>
+</section >

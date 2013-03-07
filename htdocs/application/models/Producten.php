@@ -7,7 +7,7 @@ class Application_Model_Producten extends Zend_Db_Table_Abstract
     protected $_name = 'producten';
     protected $_primary = 'id';
     
-    public function getAllNieuws()
+    public function getAllProducten()
     {   
         // Zend_Db_Select
         /*$db = Zend_Registry::get('db');
@@ -17,6 +17,12 @@ class Application_Model_Producten extends Zend_Db_Table_Abstract
         $select->order(// search criteria)*/
         
         $this->fetchAll(); // select * from nieuws
+    }
+    public function selectProducten($params)
+    {
+       // $params = array('titel' => 'lipsum', 'omschrijving' => 'bla bla');
+       $this->select($params);
+       
     }
     /*
     public function toevoegenNieuws($params)
