@@ -23,6 +23,8 @@ class Application_Model_Page extends Zend_Db_Table_Abstract {
                 ->where('locale =?', $locale)
                 ->order('sort');
         $result = $this->fetchAll($select);
+//        var_dump($result);
+//        die;
         return $result;
     }
 
@@ -45,6 +47,8 @@ class Application_Model_Page extends Zend_Db_Table_Abstract {
                 ->where('locale =?', $locale)
                 ->where('slug =?', $slug); // altijd meegeven vorm van beveiliging
         $result = $this->fetchAll($select)->current(); // is altijd maar "één pagina ==> één slug = één pagina
+//        var_dump($result);
+//        die;
         return $result;
     }
 

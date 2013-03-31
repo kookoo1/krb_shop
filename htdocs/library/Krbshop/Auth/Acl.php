@@ -12,8 +12,8 @@ class Krbshop_Auth_Acl extends Zend_Controller_Plugin_Abstract {
         
         $roles = array('GUEST','USER','ADMIN');// uitlzen normaal DB!!! case sensitive!!!
         
-        $controllers = array('Users','index','page','error','noaccess','admin:index');
-        //$controllers = array('Users','index','producten','error','noaccess','admin:index');
+      //  $controllers = array('Users','index','page','error','noaccess','admin:index');
+      $controllers = array('Users','index','Producten','details','error','noaccess','admin:index');
         
         
         foreach ($roles as $role ) {
@@ -28,8 +28,9 @@ class Krbshop_Auth_Acl extends Zend_Controller_Plugin_Abstract {
         
         $acl->allow('ADMIN');// acces to averything
         $acl->deny('USER');// acces to everything
-        $acl->allow('USER','page');// user no acces to admin 
-//        $acl->allow('USER','producten');// user no acces to admin 
+//        $acl->allow('USER','page');// user no acces to admin 
+        $acl->allow('USER','Producten');// user no acces to admin 
+        $acl->allow('USER','details');// user no acces to admin 
         $acl->allow('USER','index');// user no acces to admin 
         //$acl->allow('USER','Default-index');// user no acces to admin // dat werkt nog 
         $acl->allow('USER','Users');// user no acces to admin 
