@@ -8,11 +8,10 @@ class Krbshop_Controller_Plugin_Navigation extends Zend_Controller_Plugin_Abstra
      * @return \Zend_Navigation
      */
     public function preDispatch(\Zend_Controller_Request_Abstract $request) {
-        
+ 
+/*  // the old way        
         // make navigation
         $container = new Zend_Navigation();
-        
-        
         $urls = array(
             array('label' => 'Home', 'action' => 'index', "controller" => 'index', 'params' => array()),
             array('label' => 'Producten', 'action' => 'overview', 'controller' => 'producten', 'params' => array()),
@@ -30,6 +29,32 @@ class Krbshop_Controller_Plugin_Navigation extends Zend_Controller_Plugin_Abstra
         }
         Zend_Registry::set('Zend_Navigation', $container);
         return $container;
+        
+*/        
+      
+        // the new way with the DB and tranlation
+        $locale = Zend_Registry::get('Zend_Locale');
+        $model = new Application_Model_Page();
+        $pages = $model->getMenu($locale);
+        
+//        var_dump($pages);
+//        die;
+        $container = new Zend_Navigation();
+        
+        foreach ($pages as $page) {
+            
+            $menu = new Zend_Navigation_Page_Mvc (
+            
+            array ('label' => $page['title'],
+                   //'controller' => 'index',
+                    'route'  => 'page', // de route om mooiere URL te maken
+                    'params' => array('slug' =>$page['slug'],
+                                        'lang' => $locale)));
+            
+            $container->addPage($menu);
+        }
+        
+        Zend_Registry::set('Zend_Navigation',$container);        
         
     }
 }

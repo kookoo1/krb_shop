@@ -15,8 +15,8 @@ class Application_Model_Producten extends Zend_Db_Table_Abstract
         $select->from('nieuws');
         $select->where(// search criteria)
         $select->order(// search criteria)*/
-        
-        $this->fetchAll(); // select * from nieuws
+         
+        return $this->fetchAll(); // select * from nieuws
     }
     public function selectProducten($params)
     {

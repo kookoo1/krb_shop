@@ -17,7 +17,9 @@ class ProductenController extends Zend_Controller_Action
     {
         // action body
         $productenModel = new Application_Model_Producten();
-        $producten = $productenModel->fetchAll(); // haal alles op
+        $producten = $productenModel->getAllProducten(); // haal alles op
+//        $producten = $productenModel->fetchAll();
+        //var_dump($producten);
         $this->view->producten = $producten;
         
         
