@@ -38,6 +38,8 @@
         <modelFile modelName="Page"/>
         <modelFile modelName="Users"/>
         <modelFile modelName="Translation"/>
+        <modelFile modelName="Roles"/>
+        <modelFile modelName="Controllers"/>
       </modelsDirectory>
       <modulesDirectory/>
       <servicesDirectory enabled="false"/>

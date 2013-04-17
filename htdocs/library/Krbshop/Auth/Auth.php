@@ -52,6 +52,9 @@ class Krbshop_Auth_Auth extends Zend_Controller_Plugin_Abstract {
 
             // role is een veld binnen onze user tabel
 
+            var_dump($role);
+              //die();
+
 
             if ($request->getModuleName() !== 'default' && $request->getModuleName() !== NULL) { // ook het type variable controleren
                 $isAllowed = $acl->isAllowed($role, $request->getModuleName() . ':' .
@@ -63,6 +66,7 @@ class Krbshop_Auth_Auth extends Zend_Controller_Plugin_Abstract {
             if (!$isAllowed) {
                 $redirector = Zend_Controller_Action_HelperBroker::getStaticHelper('redirector');
                 $redirector->gotoUrl('/noaccess');
+                //$redirector->gotoUrl('/nl_BE/login');
             }
         }
     }

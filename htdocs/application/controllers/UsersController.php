@@ -53,8 +53,7 @@ class UsersController extends Zend_Controller_Action {
                     }
                 }
             } else {
-                                echo '<br />hier ben ik ook ==> no valid';
-
+                echo '<br />hier ben ik ook ==> no valid';
             }
         }
     }

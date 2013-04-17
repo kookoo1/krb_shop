@@ -18,7 +18,7 @@ class Application_Model_Users extends Zend_Db_Table_Abstract
         $select = $this->select()->where('username = ?' , $indentity);
         $result = $this->fetchAll($select)->current();
         
-//        var_dump($result);
+//      var_dump($result);
         return $result;
         
     }

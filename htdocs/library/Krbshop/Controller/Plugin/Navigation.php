@@ -30,7 +30,7 @@ class Krbshop_Controller_Plugin_Navigation extends Zend_Controller_Plugin_Abstra
             $container->addPage($page);
         }
         Zend_Registry::set('Zend_Navigation', $container);
-        return $container;
+        return $container;2
         
 */      
       
